@@ -91,4 +91,8 @@ This is one reason developers sometimes adopt other architectures like MVVM, VIP
 
 <img width="742" alt="Screenshot 2025-05-21 at 6 26 35 PM" src="https://github.com/user-attachments/assets/d3995cb7-3d88-4fd1-b723-df64915daa28" />
 
+Image Source & Credits : Essential Developers
+
+<img width="808" alt="MVC" src="https://github.com/user-attachments/assets/56c78743-517f-4bc3-8e1a-494fdf647d78" />
+
  
