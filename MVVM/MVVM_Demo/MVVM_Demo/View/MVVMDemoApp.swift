@@ -7,7 +7,7 @@
 import SwiftUI
 
 @main
-struct MVVMSwiftUIDemoApp: App {
+struct MVVMDemoApp: App {
     var body: some Scene {
         WindowGroup {
             ProductListView()
