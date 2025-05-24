@@ -8,10 +8,6 @@
 import Foundation
 import Combine 
 
-protocol APIServiceProtocol {
-    func fetch<T: Decodable>(_ endpoint: String) -> AnyPublisher<T, Error>
-}
-
 class APIService: APIServiceProtocol {
     func fetch<T: Decodable>(_ endpoint: String) -> AnyPublisher<T, Error> {
         guard let url = URL(string: endpoint) else {
