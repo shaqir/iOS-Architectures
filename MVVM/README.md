@@ -53,7 +53,7 @@ Clone the repository:
 ## 🧪 Running Tests : XCTest
 
 - In Xcode, go to the Test Navigator (⌘ + 6).
-- https://www.linkedin.com/in/sakirali-saiyed-57387762/Click the ▶️ button next to MVVM_SwiftUI_Combine_DemoTests to run all tests.
+- Click the ▶️ button next to MVVM_DemoTests to run all tests.
  
 Tests include:
 
