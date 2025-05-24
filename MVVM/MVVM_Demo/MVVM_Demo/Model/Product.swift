@@ -14,9 +14,4 @@ struct Product: Identifiable, Decodable, Equatable {
     let thumbnail: String
 }
 
-struct ProductResponse: Decodable {
-    let products: [Product]
-    let total: Int
-    let skip: Int
-    let limit: Int
-}
+
