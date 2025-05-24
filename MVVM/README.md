@@ -26,58 +26,31 @@ This project showcases how to:
 
 ## 📁 Folder Structure
 
-MVVM_SwiftUI_Combine_Demo/
-├── Models/
-│ └── Product.swift
-│ └── ProductResponse.swift
-│
-├── Services/
-│ └── APIService.swift
-│ └── APIServiceProtocol.swift
-│
-├── ViewModels/
-│ └── ProductViewModel.swift
-│
-├── Views/
-│ └── ProductListView.swift
-│ └── ProductRowView.swift
-│
-├── Resources/
-│ └── Assets.xcassets
-│ └── LaunchScreen.storyboard
-│
-├── MVVM_SwiftUI_Combine_DemoTests/
-│ └── ProductViewModelTests.swift
-│ └── APIServiceTests.swift
-│
-├── MVVM_SwiftUI_Combine_DemoApp.swift
-└── README.md
+<img width="366" alt="Screenshot 2025-05-23 at 10 07 45 PM" src="https://github.com/user-attachments/assets/45ace3fd-57cd-487a-a316-95752e5b63a9" />
 
----
-
+ 
 ## 🔧 API Used
 
 This demo uses a free public JSON API:
 https://dummyjson.com/products
 
 
-🚀 Getting Started
+## 🚀 Getting Started
+
 Clone the repository:
 
- 
-git clone https://github.com/shaqir29/MVVM_Demo.git
-Open the project in Xcode:
+- git clone https://github.com/shaqir29/MVVM_Demo.git
+- Open the project in Xcode:
 
- 
-open MVVM_Demo.xcodeproj
-Build and run on a simulator or device.
+- open MVVM_Demo.xcodeproj
+- Build and run on a simulator or device.
 
 🔍 Search & Pagination
 - The app fetches products from the API in batches of 10.
 - A SearchBar allows you to filter products by title.
 - Pagination loads more products as you scroll.
 
-🧪 Running Tests : XCTest
+## 🧪 Running Tests : XCTest
 
 - In Xcode, go to the Test Navigator (⌘ + 6).
 - https://www.linkedin.com/in/sakirali-saiyed-57387762/Click the ▶️ button next to MVVM_SwiftUI_Combine_DemoTests to run all tests.
