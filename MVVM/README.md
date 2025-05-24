@@ -69,8 +69,8 @@ Tests include:
 
 
 🧑‍💻 Author
-Sakir Saiyed
-[LinkedIn]([https://github.com/your-username](https://www.linkedin.com/in/sakirali-saiyed-57387762).
+SakirAli Saiyed
+[LinkedIn](https://www.linkedin.com/in/sakirali-saiyed-57387762).
 
 
 📝 License
