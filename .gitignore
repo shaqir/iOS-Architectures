@@ -63,3 +63,8 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# AI assistant config
+CLAUDE.md
+AGENTS.md
+.claude/
