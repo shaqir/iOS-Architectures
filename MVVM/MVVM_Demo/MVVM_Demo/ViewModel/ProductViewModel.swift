@@ -6,13 +6,12 @@
 //
 import Foundation
 import Combine
-import Foundation
-import Combine
 
+@MainActor
 class ProductViewModel: ObservableObject {
-    @Published var products: [Product] = []
+    @Published private(set) var products: [Product] = []
     @Published var searchQuery = ""
-    @Published var errorMessage: String?
+    @Published private(set) var errorMessage: String?
     
     private var cancellables = Set<AnyCancellable>()
     private let apiService: APIServiceProtocol
@@ -42,9 +41,9 @@ class ProductViewModel: ObservableObject {
         let endpoint: String
 
         if searchQuery.isEmpty {
-            endpoint = "https://dummyjson.com/products?limit=\(pageSize)&skip=\(skip)"
+            endpoint = APIEndpoint.products(limit: pageSize, skip: skip)
         } else {
-            endpoint = "https://dummyjson.com/products/search?q=\(searchQuery)&limit=\(pageSize)&skip=\(skip)"
+            endpoint = APIEndpoint.searchProducts(query: searchQuery, limit: pageSize, skip: skip)
         }
 
         apiService.fetch(endpoint)
@@ -60,6 +59,10 @@ class ProductViewModel: ObservableObject {
                 self?.hasMoreData = self?.products.count ?? 0 < response.total
             }
             .store(in: &cancellables)
+    }
+
+    func dismissError() {
+        errorMessage = nil
     }
 
     private func setupSearch() {

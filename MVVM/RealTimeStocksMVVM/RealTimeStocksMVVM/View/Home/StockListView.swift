@@ -11,7 +11,7 @@ import Combine
 // MARK: - View
 
 struct StockListView: View {
-    @ObservedObject var viewModel = MarketViewModel()
+    @StateObject var viewModel = MarketViewModel()
     
     var body: some View {
         NavigationView {

@@ -45,7 +45,10 @@ class AddressViewController: UITableViewController, AddAddressDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! AddressViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? AddressViewCell else {
+            assertionFailure("AddressViewCell not registered for identifier 'reuseIdentifier'")
+            return UITableViewCell()
+        }
 
         // Configure the cell...
         let address = addressArray[indexPath.section]

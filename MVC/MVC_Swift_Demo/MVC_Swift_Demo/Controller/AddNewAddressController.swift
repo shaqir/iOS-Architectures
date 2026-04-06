@@ -30,21 +30,21 @@ class AddNewAddressController: UITableViewController {
     }
     
     @IBAction func saveAddressTapped(_ sender: UIBarButtonItem) {
-        print("Street: \(streetTextField.text ?? "")")
-        print("City: \(cityTextField.text ?? "")")
-        print("State: \(stateTextField.text ?? "")")
-        print("Zipcode: \(zipcodeTextField.text ?? "")")
-        
-        let streetName = streetTextField.text ?? ""
-        let city = self.cityTextField.text ?? ""
-        let state = self.stateTextField.text ?? ""
-        let zipcode = self.zipcodeTextField.text ?? ""
-        
-        let newAddress : Address = Address(street: streetName, city: city, zipcode: zipcode, state: state)
-        
-        print(newAddress)
+        let streetName = streetTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let city = cityTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let state = stateTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let zipcode = zipcodeTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+
+        guard !streetName.isEmpty, !city.isEmpty, !state.isEmpty, !zipcode.isEmpty else {
+            let alert = UIAlertController(title: "Missing Fields", message: "All fields are required.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+            return
+        }
+
+        let newAddress = Address(street: streetName, city: city, zipcode: zipcode, state: state)
         delegate?.didAddAddress(newAddress)
-        
+
         navigationController?.popViewController(animated: true)
     }
     

@@ -5,9 +5,6 @@
 //  Created by Sakir Saiyed on 23/05/25.
 //
 import SwiftUI
-import SwiftUI
-
-import SwiftUI
 
 struct ProductListView: View {
     @StateObject private var viewModel = ProductViewModel()
@@ -60,7 +57,10 @@ struct ProductListView: View {
             }
             .navigationTitle("Products")
             .searchable(text: $viewModel.searchQuery, placement: .navigationBarDrawer(displayMode: .always))
-            .alert(isPresented: .constant(viewModel.errorMessage != nil)) {
+            .alert(isPresented: Binding<Bool>(
+                get: { viewModel.errorMessage != nil },
+                set: { if !$0 { viewModel.dismissError() } }
+            )) {
                 Alert(title: Text("Error"), message: Text(viewModel.errorMessage ?? "Unknown error"), dismissButton: .default(Text("OK")))
             }
         }
